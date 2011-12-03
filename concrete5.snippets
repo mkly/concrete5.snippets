@@ -1,0 +1,155 @@
+snippet c5d
+	define('C5_EXECUTE') or die('Access Denied.');
+
+snippet bc
+	class ${1:BlockControllerName}BlockController extends BlockController {
+		
+		protected $btTable "bt$1";
+		protected $btInterfaceWidth = "${2:400}";
+		protected $btInterfaceHeight = "${3:400}";
+
+		public function getBlockTypeName() {
+			return t('${4:Block Name}');
+		}
+
+		public function getBlockTypeDescription() {
+			return t('${5:Block Description}');
+		}
+		${6}
+	}
+
+snippet bcc
+	class ${1:BlockControllerName}BlockController extends BlockController {
+
+		protected $btTable "bt$1";
+		protected $btInterfaceWidth = "${2:400}";
+		protected $btInterfaceHeight = "${3:400}";
+		protected $btCacheBlockRecord = ${4:true};
+		protected $btCacheBlockOutput = ${5:true};
+		protected $btCacheBlockOutputOnPost = ${6:true};
+		protected $btCacheBlockOutputForRegisteredUsers = ${6:true};
+		protected $btCacheBlockOutputLifetime = ${7:CACHE_LIFETIME};
+
+		public function getBlockTypeName() {
+			return t('${8:Block Name}');
+		}
+
+		public function getBlockTypeDescription() {
+			return t('${9:Block Description}');
+		}
+		${10}
+	}
+
+snippet bcv
+	public function view() {
+		${1}
+	}
+
+snippet bcos
+	public function on_start() {
+		${1}
+	}
+
+snippet bcopv
+	public function on_page_view() {
+		${1}
+	}
+
+snippet bca
+	public function add() {
+		${1}
+	}
+
+snippet bce
+	public function edit() {
+		${1}
+	}
+
+snippet bcs
+	public function save(${1:$args}) {
+		${2}
+	}
+
+snippet db
+	<?xml version="1.0"?>
+	<schema version="0.3">
+		<table name="bt${1:BlockTableName}">
+			<field name="bID" type="I">
+				<key />
+				<unsigned />
+			</field>
+			${2}
+		</table>
+	</schema>
+
+snippet dbfi
+	<field name="${1:fieldName}" type="I">${2}</field>${3}
+
+snippet dbfi1
+	<field name="${1:fieldName}" type="I1">${2}</field>${3}
+
+snippet dbfi2
+	<field name="${1:fieldName}" type="I2">${2}</field>${3}
+
+snippet dbfi4
+	<field name="${1:fieldName}" type="I4">${2}</field>${3}
+
+snippet dbfi8
+	<field name="${1:fieldName}" type="I8">${2}</field>${3}
+
+snippet dbfc
+	<field name="${1:fieldName}" type="C" size="${2:255}">${3}</field>${4}
+
+snippet dbdef
+	<default value="${1:}" />
+
+snippet dbkey
+	<key />
+
+snippet dbnn
+	<notnull />
+
+snippet pk
+	class ${1:PackageName}Package extends Package {
+
+		protected $pkgHandle = "${2:package_handle}";
+		protected $appVersionRequired = "${3:5.4.1}";
+		protected $pkgVersion = "${4:1.0}";
+
+		public function getPackageName() {
+			return t('${5:Package Name}');
+		}
+
+		public function getPackageDescription() {
+			return t('${6:Package Description}');
+		}
+		${7}
+	}
+
+snippet pki
+	public function install() {
+		$pkg = parent::install();
+		${1}
+	}
+
+snippet pku
+	public function uninstall() {
+		$pkg = parent::uninstall();
+		${1}
+	}
+
+snippet pkos
+	public function on_start() {
+		${1}
+	}
+
+snippet pkup
+	public function upgrade() {
+		${1}
+	}
+
+snippet pkbu
+	public function backup() {
+		${1}
+	}
+
