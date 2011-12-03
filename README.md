@@ -7,9 +7,11 @@ Installation
 Copy concrete5.snippets to you snipmate folder
 
 Add to .vimrc
+
 ```
 autocmd Filetype php set ft=php.concrete5
 ```
+
 ```
 autocmd Filetype xml set ft=xml.concrete5
 ```
