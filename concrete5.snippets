@@ -1,10 +1,10 @@
 snippet c5d
-	define('C5_EXECUTE') or die('Access Denied.');
+	defined('C5_EXECUTE') or die('Access Denied.');
 
-snippet bc
+snippet blockcontroller
 	class ${1:BlockControllerName}BlockController extends BlockController {
 		
-		protected $btTable "bt$1";
+		protected $btTable = "bt$1";
 		protected $btInterfaceWidth = "${2:400}";
 		protected $btInterfaceHeight = "${3:400}";
 
@@ -18,10 +18,10 @@ snippet bc
 		${6}
 	}
 
-snippet bcc
+snippet blockcontrollercache
 	class ${1:BlockControllerName}BlockController extends BlockController {
 
-		protected $btTable "bt$1";
+		protected $btTable = "bt$1";
 		protected $btInterfaceWidth = "${2:400}";
 		protected $btInterfaceHeight = "${3:400}";
 		protected $btCacheBlockRecord = ${4:true};
@@ -55,22 +55,22 @@ snippet bcopv
 		${1}
 	}
 
-snippet bca
+snippet bcad
 	public function add() {
 		${1}
 	}
 
-snippet bce
+snippet bced
 	public function edit() {
 		${1}
 	}
 
-snippet bcs
+snippet bcsa
 	public function save(${1:$args}) {
 		${2}
 	}
 
-snippet dbx
+snippet dbxml
 	<?xml version="1.0"?>
 	<schema version="0.3">
 		<table name="bt${1:BlockTableName}">
@@ -109,7 +109,7 @@ snippet dbkey
 snippet dbnn
 	<notnull />
 
-snippet pk
+snippet package
 	class ${1:PackageName}Package extends Package {
 
 		protected $pkgHandle = "${2:package_handle}";
@@ -126,13 +126,13 @@ snippet pk
 		${7}
 	}
 
-snippet pki
+snippet pkin
 	public function install() {
 		$pkg = parent::install();
 		${1}
 	}
 
-snippet pku
+snippet pkun
 	public function uninstall() {
 		$pkg = parent::uninstall();
 		${1}
@@ -153,3 +153,14 @@ snippet pkbu
 		${1}
 	}
 
+snippet area
+	<?php
+		$a = new Area('${1}');
+		$a->display($c);
+	?>
+
+snippet globalarea
+	<?php
+		$a = new Area('${1}');
+		$a->display($c);
+	?>
