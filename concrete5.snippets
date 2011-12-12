@@ -1,5 +1,5 @@
 snippet c5d
-	defined('C5_EXECUTE') or die('Access Denied.');
+	defined('C5_EXECUTE') or die('Access Denied.');${1:}
 
 snippet blockcontroller
 	class ${1:BlockControllerName}BlockController extends BlockController {
@@ -40,7 +40,7 @@ snippet blockcontrollercache
 		${10}
 	}
 
-snippet bcv
+snippet bcvi
 	public function view() {
 		${1}
 	}
@@ -50,7 +50,7 @@ snippet bcos
 		${1}
 	}
 
-snippet bcopv
+snippet bcop
 	public function on_page_view() {
 		${1}
 	}
@@ -164,3 +164,13 @@ snippet globalarea
 		$a = new Area('${1}');
 		$a->display($c);
 	?>
+snippet ldli
+	Loader::library('${1:}');${2}
+snippet ldhe
+	Loader::helper('${1:}');${2}
+snippet ldmo
+	Loader::model('${1:}');${2}
+snippet lddb
+	Loader::db();
+snippet ldel
+	Loader::element('${1:}');${2}
