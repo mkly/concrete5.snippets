@@ -27,17 +27,17 @@ snippet blockcontrollercache
 		protected $btCacheBlockRecord = ${4:true};
 		protected $btCacheBlockOutput = ${5:true};
 		protected $btCacheBlockOutputOnPost = ${6:true};
-		protected $btCacheBlockOutputForRegisteredUsers = ${6:true};
-		protected $btCacheBlockOutputLifetime = ${7:CACHE_LIFETIME};
+		protected $btCacheBlockOutputForRegisteredUsers = ${7:true};
+		protected $btCacheBlockOutputLifetime = ${8:CACHE_LIFETIME};
 
 		public function getBlockTypeName() {
-			return t('${8:Block Name}');
+			return t('${9:Block Name}');
 		}
 
 		public function getBlockTypeDescription() {
-			return t('${9:Block Description}');
+			return t('${10:Block Description}');
 		}
-		${10}
+		${11}
 	}
 
 snippet bcvi
