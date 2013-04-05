@@ -218,7 +218,12 @@ snippet input
 			<input type="text" id="${2:name}" value="<?=$$2?>">
 		</div>
 	</div>
-snippet checkbox
+
+snippet incheck
 	<label class="checkbox">
 		<input type="checkbox" id="${2:name}"<?=$$2 ? ' checked':''?>><?=t('${1:description}')?>
 	</label>
+
+snippet intext
+	<label for="$2"><?=t('${1:description}');?></label>
+	<input type="text" id="${2:name}" value="<?=$$2?>">
