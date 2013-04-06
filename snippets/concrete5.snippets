@@ -85,6 +85,11 @@ snippet dbxml
 snippet dbfi
 	<field name="${1:fieldName}" type="I">${2}</field>${3}
 
+snippet dbbool
+	<field name="${1:name}" type="I" size="1">
+		<notnull/>
+		<default value="${2:0}"/>
+	</field>
 snippet dbfi1
 	<field name="${1:fieldName}" type="I1">${2}</field>${3}
 
@@ -195,12 +200,30 @@ snippet singlep
 snippet set
 	$this->set('${1:var}',$$1);
 
-snippet t
+snippet ts
 	t('${1:blablabla}');
 
+snippet tp
+	<?= t('${1:blablabla}') ?>
 snippet pf
 	public function ${1:this}(${2:garbage}) {
 	}
 snippet db
 	$db = Loader::db();
 	
+snippet input
+	<div class="control-group">
+		<label class="control-label" for="$2"><?=t('${1:description}')?></label>
+		<div class="controls">
+			<input type="text" id="${2:name}" value="<?=$$2?>">
+		</div>
+	</div>
+
+snippet incheck
+	<label class="checkbox">
+		<input type="checkbox" id="${2:name}"<?=$$2 ? ' checked':''?>><?=t('${1:description}')?>
+	</label>
+
+snippet intext
+	<label for="$2"><?=t('${1:description}');?></label>
+	<input type="text" id="${2:name}" value="<?=$$2?>">
