@@ -199,31 +199,33 @@ snippet singlep
 
 snippet set
 	$this->set('${1:var}',$$1);
-
 snippet ts
 	t('${1:blablabla}');
-
 snippet tp
 	<?= t('${1:blablabla}') ?>
+snippet pe
+	<?= ${1:whatever} ?>
 snippet pf
 	public function ${1:this}(${2:garbage}) {
 	}
 snippet db
 	$db = Loader::db();
-	
 snippet input
 	<div class="control-group">
 		<label class="control-label" for="$2"><?=t('${1:description}')?></label>
 		<div class="controls">
-			<input type="text" id="${2:name}" value="<?=$$2?>">
+			<input type="text" id="${2:name}" name="$2" value="<?=$$2?>">
 		</div>
 	</div>
 
 snippet incheck
 	<label class="checkbox">
-		<input type="checkbox" id="${2:name}"<?=$$2 ? ' checked':''?>><?=t('${1:description}')?>
+		<input type="checkbox" id="${2:name}" name="$2"<?=$$2 ? ' checked':''?>><?=t('${1:description}')?>
 	</label>
 
 snippet intext
 	<label for="$2"><?=t('${1:description}');?></label>
-	<input type="text" id="${2:name}" value="<?=$$2?>">
+	<input type="text" id="${2:name}" name="$2" value="<?=$$2?>">
+
+snippet ap
+	'${1:sorrow}'=>$$1,
