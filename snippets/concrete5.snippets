@@ -131,6 +131,19 @@ snippet package
 		${7}
 	}
 
+snippet startingpointpackage
+	class ${1:Name}StartingPointPackage extends StartingPointPackage {
+
+		protected $pkgHandle = "${2:package_handle}"
+
+		public function getPackageName() {
+			return t('${3:Name}');
+
+		public function getPackageDescription() {
+			return t('${4:Description}');
+		}${5}
+	}
+
 snippet pkin
 	public function install() {
 		$pkg = parent::install();
